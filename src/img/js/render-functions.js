@@ -1,58 +1,35 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const loader = document.querySelector('.loader');
 const gallery = document.querySelector('.gallery');
+const loader = document.querySelector('.loader');
+const moreButton = document.querySelector('.more-button');
 
 const lightbox = new SimpleLightbox('.gallery a', {
-    captionDelay: 250,
-    captionPosition: 'bottom',
     captionsData: 'alt',
+    captionDelay: 250,
 });
 
+
 export function createGallery(images) {
-    const imagesArr = images
+    const markup = images
         .map(
-            ({
-                webformatURL,
-                largeImageURL,
-                tags,
-                likes,
-                views,
-                comments,
-                downloads,
-            }) => `<li class="gallery-item">
-              <a class="gallery-link" href=${largeImageURL}>
-                <img
-                  src=${webformatURL}
-                  alt="${tags}"
-                  width="360"
-                  height="200"
-                />
-                <div class="markup-image">
-                  <ul>
-                    <li class="markup-image-text">likes</li>
-                    <li class="markup-image-value">${likes}</li>      
-                  </ul>
-                  <ul>
-                    <li class="markup-image-text">views</li>
-                    <li class="markup-image-value">${views}</li>      
-                  </ul>
-                  <ul>
-                    <li class="markup-image-text">comments</li>
-                    <li class="markup-image-value">${comments}</li>      
-                  </ul>
-                  <ul>
-                    <li class="markup-image-text">downloads</li>
-                    <li class="markup-image-value">${downloads}</li>      
-                  </ul>
-                </div>
-              </a>
-            </li>`
+            ({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => `
+      <li class="gallery-item">
+        <a class="gallery-link" href="${largeImageURL}">
+          <img src="${webformatURL}" alt="${tags}" width="360" height="200" loading="lazy" />
+        </a>
+        <ul class="info">
+          <li class="info-item"><span class="info-label">Likes</span><span class="info-value">${likes}</span></li>
+          <li class="info-item"><span class="info-label">Views</span><span class="info-value">${views}</span></li>
+          <li class="info-item"><span class="info-label">Comments</span><span class="info-value">${comments}</span></li>
+          <li class="info-item"><span class="info-label">Downloads</span><span class="info-value">${downloads}</span></li>
+        </ul>
+      </li>`
         )
         .join('');
 
-    gallery.innerHTML = imagesArr;
+    gallery.insertAdjacentHTML('beforeend', markup);
     lightbox.refresh();
 }
 
@@ -61,9 +38,17 @@ export function clearGallery() {
 }
 
 export function showLoader() {
-    loader.style.display = 'block';
+    loader.classList.remove('is-hidden');
 }
 
 export function hideLoader() {
-    loader.style.display = 'none';
+    loader.classList.add('is-hidden');
+}
+
+export function showLoadMoreButton() {
+    moreButton.style.display = 'block';
+}
+
+export function hideLoadMoreButton() {
+    moreButton.style.display = 'none';
 }
