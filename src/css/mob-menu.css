@@ -1,0 +1,172 @@
+/*.header {
+    background: #fceee6;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: fixed;
+    width: 100%;
+}
+
+.header-logo {}
+
+.header-svg {
+    width: 83px;
+    height: 21px;
+}
+
+.header-nav {
+    display: flex;
+}
+
+.header-span {}
+
+.header-menu {
+
+    font-family: "Rubik", sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 32px;
+
+    list-style: none;
+}
+
+.header-a {
+    font-family: "Rubik", sans-serif;
+
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 4px;
+
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #0b0500;
+}
+
+
+.header-burger-btn {
+    padding: 0;
+    border: none;
+    background-color: transparent;
+}
+
+.header-menu-icon {
+    stroke-width: 2.50px;
+    stroke: #1b414b;
+}
+
+@media screen and (min-width: 768px) {
+    .header-burger-btn {
+        display: none;
+    }
+} */
+.header-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0px;
+    padding: 14px 20px;
+    margin: 0;
+
+
+}
+
+.header {
+    width: 83px;
+    height: 21px;
+}
+
+.header-a {
+    display: none;
+
+}
+
+.header-li {
+    list-style: none;
+}
+
+.header-burger-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 10px;
+
+
+
+    position: relative;
+
+    height: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+.header-menu-icon {
+    position: relative;
+    width: 24px;
+
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
+
+
+
+
+
+
+/* Мобильное меню — скрыто по умолчанию */
+.mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    padding: 40px 20px;
+}
+
+/* Когда меню активно */
+.mobile-menu.is-open {
+    transform: translateX(0);
+}
+
+/* Кнопка закрытия */
+.mobile-close-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Навигация */
+.nav-link {
+    text-decoration: none;
+    font-size: 24px;
+    color: #333;
+}
+
+/* Запрет прокрутки фона */
+body.menu-open {
+    overflow: hidden;
+}

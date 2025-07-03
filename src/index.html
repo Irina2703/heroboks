@@ -1,27 +1,39 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>JS-HW-12</title>
-  <link rel="stylesheet" href="./css/styles.css" />
+  <meta charset="UTF-8">
+  <title>Booksy</title>
+  <link rel="stylesheet" href="/src/css/mob-menu.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
-<body>
-  <form class="form">
-    <label>
-      <input type="text" name="search-text" placeholder="Search images..." class="search-field" />
-    </label>
-    <button type="submit" class="search-button">Search</button>
-  </form>
+<body class="header-section">
+  <header class="header">
+    <div class="header-logo">
+      <svg width="83" height="21" viewBox="0 0 83 21" fill="none" class="header-svg">
+        <use href="/src/img/booksy_svg.svg"></use>
+      </svg>
+    </div>
+    <nav class="header-nav">
+      <ul class="header-menu">
+        <li class="header-li"><a href="#home" class="header-a">Home</a> </li>
+        <li class="header-li"><a href="#books" class="header-a">Books</a> </li>
+        <li class="header-li"><a href="#feedbacks" class="header-a">Feedbacks</a> </li>
+        <li class="header-li"><a href="#events" class="header-a">Events</a> </li>
+        <li class="header-li"><a href="#location" class="header-a">Location</a> </li>
+      </ul>
+    </nav>
+  </header>
+  <button type="button" class="header-burger-btn" data-menu-open>
+    <svg class="header-menu-icon" width="24" height="24">
+      <use href="/src/img/header_burger.svg"></use>
+    </svg>
+  </button>
 
-  <ul class="gallery"></ul>
-  <button class="more-button" type="button">Load more</button>
-  <span class="loader is-hidden" aria-label="Loading…"></span>
 
-  <script type="module" src="./main.js"></script>
+  <script src="/src/js/script.js"></script>
+
 </body>
 
 </html>
