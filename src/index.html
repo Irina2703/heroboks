@@ -15,14 +15,16 @@
         <use href="/src/img/booksy_svg.svg"></use>
       </svg>
     </div>
-    <nav class="header-nav">
-      <ul class="header-menu">
-        <li class="header-li"><a href="#home" class="header-a">Home</a> </li>
-        <li class="header-li"><a href="#books" class="header-a">Books</a> </li>
-        <li class="header-li"><a href="#feedbacks" class="header-a">Feedbacks</a> </li>
-        <li class="header-li"><a href="#events" class="header-a">Events</a> </li>
-        <li class="header-li"><a href="#location" class="header-a">Location</a> </li>
-      </ul>
+    <nav class="header_nav">
+      <div class="header-div">
+        <ul class="header-menu">
+          <li class="header-li"><a href="#home" class="header-a">Home</a> </li>
+          <li class="header-li"><a href="#books" class="header-a">Books</a> </li>
+          <li class="header-li"><a href="#feedbacks" class="header-a">Feedbacks</a> </li>
+          <li class="header-li"><a href="#events" class="header-a">Events</a> </li>
+          <li class="header-li"><a href="#location" class="header-a">Location</a> </li>
+        </ul>
+      </div>
     </nav>
   </header>
   <button type="button" class="header-burger-btn" data-menu-open>
@@ -31,9 +33,21 @@
     </svg>
   </button>
 
-
+  <div class="mobile-menu" data-menu>
+    <button type="button" class="mobile-close-btn" data-menu-close>
+      <svg width="24" height="24">
+        <use href="/src/img/webp/icon.svg"></use>
+      </svg>
+    </button>
+    <ul class="mobile-menu-list">
+      <li><a href="#home" class="mobile-menu-link">Home</a></li>
+      <li><a href="#books" class="mobile-menu-link">Books</a></li>
+      <li><a href="#feedbacks" class="mobile-menu-link">Feedbacks</a></li>
+      <li><a href="#events" class="mobile-menu-link">Events</a></li>
+      <li><a href="#location" class="mobile-menu-link">Location</a></li>
+    </ul>
+  </div>
   <script src="/src/js/script.js"></script>
-
 </body>
 
 </html>
